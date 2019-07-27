@@ -1,12 +1,12 @@
 pipeline {
     agent any
     tools {
-        maven 'Maven 3.3.9'
+        maven 'Maven'
     }
     stages {
        stage ('Build') {
             steps {
-                bat 'mvn -Dmaven.test.failure.ignore=true compile' 
+                bat 'mvn -Dmaven.test.failure.ignore=true compile test' 
             }
         }
     }
